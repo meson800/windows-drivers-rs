@@ -7,7 +7,7 @@ use std::{
 };
 
 use bindgen::CodegenConfig;
-use wdk_build::{BuilderExt, Config, ConfigError, DriverConfig, KMDFConfig};
+use wdk_build::{BuilderExt, Config, ConfigError, DriverConfig, UMDFConfig};
 
 // FIXME: feature gate the WDF version
 // FIXME: check that the features are exclusive
@@ -69,7 +69,7 @@ fn main() -> Result<(), ConfigError> {
 
     let config = Config {
         // FIXME: this should be based off of Cargo feature version
-        driver_config: DriverConfig::KMDF(KMDFConfig::new()),
+        driver_config: DriverConfig::UMDF(UMDFConfig::new()),
         ..Config::default()
     };
 
